@@ -1,0 +1,53 @@
+<div class="container">
+    <h4  style="background-color:rgb(126, 119, 119) ;color:white;text-align:center">
+        Books
+    </h4>
+</div>
+<br>
+<div class="container">
+    <table class="table table-bordered" *ngIf ="books && books.length">
+        <thead class="thead-light">
+            <tr>
+                <th>Book Image</th>
+            
+                <th>
+                    Book Title
+                </th>
+                <th>
+                    Book Price
+                </th>
+                <th>
+                    Book Rating
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>
+                    <a href ="book/{{book.bookId }}">
+                        <img src="{{ book.imageUrl }}" height="120px" width="100px" />
+                    </a>
+                </td>
+                <td>
+                    {{book.title}}
+                </td>
+                <td>
+                    {{book.price}}
+                </td>
+                <td>
+                    {{book.rating}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-block" style="background-color:#f1be6b">
+                        Add to Cart
+                    </button>
+
+                    <button type="button" class="btn btn-block" style="background-color:#f88a52">
+                        Buy Now
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
